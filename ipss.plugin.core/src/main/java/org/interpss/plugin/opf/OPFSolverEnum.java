@@ -4,6 +4,7 @@ public enum OPFSolverEnum {
 		LpsolveLPSolver, 
 		GIQPSolver,
 		ApacheLPSolver,
-		ApacheQPSolver
+		ApacheQPSolver,
+		ORToolsSolver
 
 }

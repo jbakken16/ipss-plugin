@@ -6,6 +6,7 @@ import org.interpss.plugin.opf.solver.IOpfSolver;
 import org.interpss.plugin.opf.solver.apache.lp.ApacheLPSolver;
 import org.interpss.plugin.opf.solver.giqpsolve.GIQPSolver;
 import org.interpss.plugin.opf.solver.lpsolve.LpsolveSolver;
+import org.interpss.plugin.opf.solver.ortoolsolve.ORToolsSolver;
 
 import com.interpss.opf.OpfNetwork;
 import com.interpss.opf.datatype.OpfConstraintType;
@@ -32,6 +33,11 @@ public class OpfSolverFactory {
 		ApacheLPSolver solver = new ApacheLPSolver(opfnet, type);
 		return solver;
 	}
+
+	public static ORToolsSolver createORToolsSolver(OpfNetwork opfnet,IOpfSolver.constraintHandleType type){
+		ORToolsSolver solver = new ORToolsSolver(opfnet, type);
+		return solver;
+	}
 	
 	public static OpfConstraint createOpfConstraint(int id, String des, double ul, double ll, 
 			OpfConstraintType type, IntArrayList colNo, DoubleArrayList val){
@@ -42,18 +48,25 @@ public class OpfSolverFactory {
 		cst.setUpperLimit(ul);
 		cst.setColNo(colNo);
 		cst.setVal(val);
-	    cst.setCstType(type);
+	    cst.setCstType(type); 
 		return cst;
 	}
 	
 	public static IOpfSolver createOPFSolver(OPFSolverEnum solver,OpfNetwork opfnet,
 			IOpfSolver.constraintHandleType type) throws OPFException {
-		if ( solver == OPFSolverEnum.LpsolveLPSolver ) 
-			return new LpsolveSolver(opfnet, type);
-		else if ( solver == OPFSolverEnum.GIQPSolver )
-			return new GIQPSolver(opfnet, type);
-		else if ( solver == OPFSolverEnum.ApacheLPSolver )
-			return new ApacheLPSolver(opfnet, type);
+		if ( null != solver ) 
+			switch (solver) {
+                case LpsolveLPSolver:
+                    return new LpsolveSolver(opfnet, type);
+                case GIQPSolver:
+                    return new GIQPSolver(opfnet, type);
+                case ApacheLPSolver:
+                    return new ApacheLPSolver(opfnet, type);
+                case ORToolsSolver:
+                    return new ORToolsSolver(opfnet, type);
+                default:
+                    break;
+            }
 		throw new OPFException("Error - unsupported solver type");
 	}
 

@@ -17,6 +17,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+	<!-- <maven.compiler.release>8</maven.compiler.release> -->
   </properties>
 
   <dependencies>
@@ -87,6 +88,13 @@
 	    <groupId>org.ojalgo</groupId>
 	    <artifactId>ojalgo</artifactId>
 	    <version>51.2.0</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/com.google.ortools/ortools-java -->
+	<dependency>
+		<groupId>com.google.ortools</groupId>
+		<artifactId>ortools-java</artifactId>
+		<version>9.12.4544</version>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/com.datumbox/lpsolve -->
