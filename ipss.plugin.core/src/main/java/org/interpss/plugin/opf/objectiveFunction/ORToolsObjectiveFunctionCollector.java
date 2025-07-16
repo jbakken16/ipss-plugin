@@ -38,8 +38,8 @@ public class ORToolsObjectiveFunctionCollector extends BaseObjectiveFunctionColl
 								+bus.getNumber());						
 					}else{
 						double fixedC = bus.getOpfGen().getFixedCost();
-                        double varC = bus.getOpfGen().getCoeffB();		// is this the linear cost?	
-						
+                        double varC = bus.getOpfGen().getCoeffA();		// A is linear, B is quadratic
+
 						fixedCost[genIndex] = fixedC;						
 						varCost[genIndex] = varC;	
 						
