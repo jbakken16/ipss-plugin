@@ -1,27 +1,3 @@
- /*
-  * @(#)SampleLoadflow.java   
-  *
-  * Copyright (C) 2006 www.interpss.org
-  *
-  * This program is free software; you can redistribute it and/or
-  * modify it under the terms of the GNU LESSER GENERAL PUBLIC LICENSE
-  * as published by the Free Software Foundation; either version 2.1
-  * of the License, or (at your option) any later version.
-  *
-  * This program is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU General Public License for more details.
-  *
-  * @Author Mike Zhou
-  * @Version 1.0
-  * @Date 09/15/2006
-  * 
-  *   Revision History
-  *   ================
-  *
-  */
-
 package org.interpss.core.zeroz;
 
 import static org.junit.Assert.assertTrue;
@@ -40,12 +16,12 @@ import org.junit.Test;
 import com.interpss.common.exp.InterpssException;
 import com.interpss.core.CoreObjectFactory;
 import com.interpss.core.aclf.AclfBus;
+import com.interpss.core.aclf.AclfNetModelType;
 import com.interpss.core.aclf.AclfNetwork;
 import com.interpss.core.aclf.adpter.AclfSwingBusAdapter;
 import com.interpss.core.algo.LoadflowAlgorithm;
 import com.interpss.core.funcImpl.zeroz.AclfNetZeroZBranchHelper;
 import com.interpss.core.funcImpl.zeroz.AclfNetZeroZDeconsolidator;
-import com.interpss.core.funcImpl.zeroz.ZbrLfResultUtil;
 
 
 // ZeroZBranch Mark : IEEE14Bus Zero Z Branch Test
@@ -57,6 +33,7 @@ public class IEEE14ZeroZBranchAclfDeconTest extends CorePluginTestSetup {
 				.setFormat(IpssAdapter.FileFormat.IEEE_ODM)
 				.load()
 				.getImportedObj();
+		net.setAclfNetModelType(AclfNetModelType.ZBR_MODEL);
 	  	//System.out.println(net.net2String());
 
 		/*
@@ -82,24 +59,28 @@ public class IEEE14ZeroZBranchAclfDeconTest extends CorePluginTestSetup {
   		// cashe the bus and branch results for comparison after deconsolidation
   		Map<String,String> results = new HashMap<>();
   		Map<String,String> pIntoNetResults = new HashMap<>();
-  		net.getBusList().forEach(bus -> {
-  			String result = AclfOutFunc.busLfSummary(bus, true);
-  			//System.out.println(result);
-  			results.put(bus.getId(), result);
-  			
-			Complex pIntoNet = bus.powerIntoNet();
-			pIntoNetResults.put(bus.getId(), ComplexFunc.toStr(pIntoNet));
-  		});
+  		net.getBusList().stream()
+  			.filter(bus -> !bus.isActive()) 	
+	  		.forEach(bus -> {
+	  			String result = AclfOutFunc.busLfSummary(bus, true);
+	  			//System.out.println(result);
+	  			results.put(bus.getId(), result);
+	  			
+				Complex pIntoNet = bus.powerIntoNet();
+				pIntoNetResults.put(bus.getId(), ComplexFunc.toStr(pIntoNet));
+	  		});
   		
  		Map<String,String> from2ToResults = new HashMap<>();
   		Map<String,String> to2FromResults = new HashMap<>();
-  		net.getBranchList().forEach(branch -> {
-  			String originalId = branch.getOriginalBranchId().equals("") ? 
-  					branch.getId() : branch.getOriginalBranchId();
-  			//System.out.println("Branch: " + branch.getId() + " originalId: " + originalId);
-  			from2ToResults.put(originalId, ComplexFunc.toStr(branch.powerFrom2To()));
-  			to2FromResults.put(originalId, ComplexFunc.toStr(branch.powerTo2From()));
-  		});
+  		net.getBranchList().stream()
+  			.filter(branch -> !branch.isActive())
+	  		.forEach(branch -> {
+	  			String originalId = branch.getOriginalBranchId().equals("") ? 
+	  					branch.getId() : branch.getOriginalBranchId();
+	  			//System.out.println("Branch: " + branch.getId() + " originalId: " + originalId);
+	  			from2ToResults.put(originalId, ComplexFunc.toStr(branch.powerFrom2To()));
+	  			to2FromResults.put(originalId, ComplexFunc.toStr(branch.powerTo2From()));
+	  		});
   		
   		//System.out.println(net.getBus("Bus4").toString(net.getBaseKva()));
   		//AclfNetInfoHelper.outputBusAclfDebugInfo(net, "Bus4", false);
@@ -117,15 +98,11 @@ public class IEEE14ZeroZBranchAclfDeconTest extends CorePluginTestSetup {
   			if (bus.isConnect2ZeroZBranch()) {
   				// We need to the special function to calculate the power into net for the bus 
   				// connected to zeroZ branch
-  				try {
-					Complex pIntoNet = ZbrLfResultUtil.powerIntoNet(bus);
-					//System.out.println("Bus " + bus.getId() + " power into net: " + ComplexFunc.toStr(pIntoNet));
-	  				if (pIntoNetResults.get(bus.getId()) == null) 
+				Complex pIntoNet = bus.powerIntoNet();
+				//System.out.println("Bus " + bus.getId() + " power into net: " + ComplexFunc.toStr(pIntoNet));
+	  			if (pIntoNetResults.get(bus.getId()) == null) 
 	  					assertTrue("Bus " + bus.getId() + " pIntoNetResults do not match", 
 	  						pIntoNetResults.get(bus.getId()).equals(ComplexFunc.toStr(pIntoNet)));
-				} catch (InterpssException e) {
-					e.printStackTrace();
-				}
   			} else {
   				// For the bus not connected to zeroZ branch, we can use the regular method
   				String result = AclfOutFunc.busLfSummary(bus, true);
