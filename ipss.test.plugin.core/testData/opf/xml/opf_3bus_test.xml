@@ -9,10 +9,10 @@
   </pss:contentInfo>
     <pss:networkCategory>Transmission</pss:networkCategory>
     <pss:analysisCategory>OPF</pss:analysisCategory>
-  <pss:dclfOpfNet id="SampleOPFBaseCase">
+  <pss:OpfNet id="SampleOPFBaseCase">
     <pss:basePower unit="MVA" value="100"/>
     <pss:busList>
-    	<pss:dclfOpfGenBus id="Bus1" name="Bus-1">
+    	<pss:OpfGenBus id="Bus1" name="Bus-1">
     		<pss:baseVoltage unit="KV" value="10"></pss:baseVoltage>
     		<pss:genData>
     		     <pss:equivGen id="Bus1_Gen" code="Swing">
@@ -29,8 +29,8 @@
     		<pss:coeffB>0.00463</pss:coeffB>
     		<pss:capacityLimit max="2" min="0.2" unit="PU" />
     		<pss:fixedCost>142.735</pss:fixedCost>
-    	</pss:dclfOpfGenBus>
-    	<pss:dclfOpfGenBus id="Bus2" name="Bus-2">
+    	</pss:OpfGenBus>
+    	<pss:OpfGenBus id="Bus2" name="Bus-2">
     		<pss:baseVoltage unit="KV" value="10"></pss:baseVoltage>
     		 <pss:genData>
     		     <pss:equivGen id="Bus2_Gen" code="PQ">
@@ -46,8 +46,8 @@
     		<pss:coeffB>0.00612</pss:coeffB>
     		<pss:capacityLimit max="1.5" min="0.1" unit="PU" />
     		<pss:fixedCost>218.335</pss:fixedCost>   		
-    	</pss:dclfOpfGenBus>
-    	<pss:dclfOpfGenBus id="Bus3" name="Bus-3">
+    	</pss:OpfGenBus>
+    	<pss:OpfGenBus id="Bus3" name="Bus-3">
     		<pss:baseVoltage value="10" unit="KV"></pss:baseVoltage>
     		<pss:genData>
     		     <pss:equivGen id="Bus3_Gen" code="PV">
@@ -64,7 +64,7 @@
     		<pss:coeffB>0.01433</pss:coeffB>
     		<pss:capacityLimit max="0.2" min="0.05" unit="PU"></pss:capacityLimit>
     		<pss:fixedCost>118.821</pss:fixedCost>    		
-    	    </pss:dclfOpfGenBus>
+    	    </pss:OpfGenBus>
     </pss:busList>
     <pss:branchList>
       <pss:aclfLine areaNumber="1" zoneNumber="1" circuitId="1" id="bus1_to_bus2_cirId_1">
@@ -92,7 +92,7 @@
       	</pss:ratingLimit>
       </pss:aclfLine>
     </pss:branchList>
-    <pss:opfNetType>SimpleDclf</pss:opfNetType>
+    <pss:opfNetType>Simple</pss:opfNetType>
     <pss:anglePenaltyFactor>0.05</pss:anglePenaltyFactor>
-  </pss:dclfOpfNet>
+  </pss:OpfNet>
 </pss:pssStudyCase>

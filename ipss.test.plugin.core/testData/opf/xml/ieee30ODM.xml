@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pssStudyCase xmlns="http://www.ieee.org/odm/Schema/2008" id="ODM_StudyCase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ieee.org/odm/Schema/2008
+E:\workspace\trunk\ieee.odm_pss\schema\opf\OPFRecordType.xsd">
+	<contentInfo>
+		<originalDataFormat>IEEE-CDF</originalDataFormat>
+		<adapterProviderName>www.interpss.org</adapterProviderName>
+		<adapterProviderVersion>1.00</adapterProviderVersion>
+	</contentInfo>
+	<networkCategory>Transmission</networkCategory>
+	<analysisCategory>OPF</analysisCategory>
+	<dclfOpfNet id="Base_Case_from_IEEECDF_format">
+		<nvPairList>
+			<nvPair>
+				<name>Date</name>
+				<value>08/20/93</value>
+			</nvPair>
+			<nvPair>
+				<name>Originator Name</name>
+				<value>UW ARCHIVE          </value>
+			</nvPair>
+			<nvPair>
+				<name>Year</name>
+				<value>1961</value>
+			</nvPair>
+			<nvPair>
+				<name>Season</name>
+				<value>W</value>
+			</nvPair>
+		</nvPairList>
+		<basePower unit="MVA" value="100.0"/>
+		<busList>
+			<dclfOpfGenBus id="Bus1" offLine="false" number="1" zoneNumber="1" areaNumber="1" name="Glen Lyn 132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.06"/>
+				<angle unit="DEG" value="0.0"/>
+				<genData>
+					<equivGen code="Swing">
+						<power unit="MVA" im="-16.1" re="260.2"/>
+						<desiredVoltage unit="PU" value="1.06"/>
+						<desiredAngle unit="DEG" value="0.0"/>
+					</equivGen>
+				</genData>
+				<coeffA>10.694</coeffA>
+				<coeffB>0.005</coeffB>
+				<capacityLimit max="1" min="0.2" unit="PU"/>
+				<fixedCost>142.734</fixedCost>
+			</dclfOpfGenBus>
+			<dclfOpfGenBus id="Bus2" offLine="false" number="2" zoneNumber="1" areaNumber="1" name="Claytor  132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.043"/>
+				<angle unit="DEG" value="-5.48"/>
+				<genData>
+					<equivGen code="PV">
+						<power unit="MVA" im="50.0" re="40.0"/>
+						<desiredVoltage unit="PU" value="1.043"/>
+						<qLimit unit="MVAR" min="-40.0" max="50.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="12.7" re="21.7"/>
+					</equivLoad>
+				</loadData>
+				<coeffA>18.1</coeffA>
+				<coeffB>0.006</coeffB>
+				<capacityLimit max="0.8" min="0.1" unit="PU"/>
+				<fixedCost>218.335</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus3" offLine="false" number="3" zoneNumber="1" areaNumber="1" name="Kumis    132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.021"/>
+				<angle unit="DEG" value="-7.96"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="1.2" re="2.4"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus4" offLine="false" number="4" zoneNumber="1" areaNumber="1" name="Hancock  132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.012"/>
+				<angle unit="DEG" value="-9.62"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="1.6" re="7.6"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus5" offLine="false" number="5" zoneNumber="1" areaNumber="1" name="Fieldale 132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.01"/>
+				<angle unit="DEG" value="-14.37"/>
+				<genData>
+					<equivGen code="PV">
+						<power unit="MVA" im="37.0" re="0.0"/>
+						<desiredVoltage unit="PU" value="1.01"/>
+						<qLimit unit="MVAR" min="-40.0" max="40.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="19.0" re="94.2"/>
+					</equivLoad>
+				</loadData>
+				<coeffA>13.327</coeffA>
+				<coeffB>0.009</coeffB>
+				<capacityLimit max="0.5" min="0.1" unit="PU"/>
+				<fixedCost>81.136</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus6" offLine="false" number="6" zoneNumber="1" areaNumber="1" name="Roanoke  132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.01"/>
+				<angle unit="DEG" value="-11.34"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+			</aclfBus>
+			<aclfBus id="Bus7" offLine="false" number="7" zoneNumber="1" areaNumber="1" name="Blaine   132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.002"/>
+				<angle unit="DEG" value="-13.12"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="10.9" re="22.8"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus8" offLine="false" number="8" zoneNumber="1" areaNumber="1" name="Reusens  132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.01"/>
+				<angle unit="DEG" value="-12.1"/>
+				<genData>
+					<equivGen code="PV">
+						<power unit="MVA" im="37.3" re="0.0"/>
+						<desiredVoltage unit="PU" value="1.01"/>
+						<qLimit unit="MVAR" min="-10.0" max="40.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="30.0" re="30.0"/>
+					</equivLoad>
+				</loadData>
+				<coeffA>13.353</coeffA>
+				<coeffB>0.009</coeffB>
+				<capacityLimit max="0.5" min="0.1" unit="PU"/>
+				<fixedCost>81.298</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus9" offLine="false" number="9" zoneNumber="1" areaNumber="1" name="Roanoke  1.0">
+				<baseVoltage unit="KV" value="1.0"/>
+				<voltage unit="PU" value="1.051"/>
+				<angle unit="DEG" value="-14.38"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+			</aclfBus>
+			<aclfBus id="Bus10" offLine="false" number="10" zoneNumber="1" areaNumber="1" name="Roanoke   33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.045"/>
+				<angle unit="DEG" value="-15.97"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="2.0" re="5.8"/>
+					</equivLoad>
+				</loadData>
+				<shuntY unit="PU" im="0.19" re="0.0"/>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus11" offLine="false" number="11" zoneNumber="1" areaNumber="1" name="Roanoke   11">
+				<baseVoltage unit="KV" value="11.0"/>
+				<voltage unit="PU" value="1.082"/>
+				<angle unit="DEG" value="-14.39"/>
+				<genData>
+					<equivGen code="PV">
+						<power unit="MVA" im="16.2" re="0.0"/>
+						<desiredVoltage unit="PU" value="1.082"/>
+						<qLimit unit="MVAR" min="-6.0" max="24.0"/>
+					</equivGen>
+				</genData>
+				<coeffA>37.889</coeffA>
+				<coeffB>0.014</coeffB>
+				
+				<capacityLimit max="0.2" min="0.05" unit="PU"></capacityLimit>
+				<fixedCost>118.82</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus12" offLine="false" number="12" zoneNumber="1" areaNumber="1" name="Hancock   33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.057"/>
+				<angle unit="DEG" value="-15.24"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="7.5" re="11.2"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus13" offLine="false" number="13" zoneNumber="1" areaNumber="1" name="Hancock   11">
+				<baseVoltage unit="KV" value="11.0"/>
+				<voltage unit="PU" value="1.071"/>
+				<angle unit="DEG" value="-15.24"/>
+				<genData>
+					<equivGen code="PV">
+						<power unit="MVA" im="10.6" re="0.0"/>
+						<desiredVoltage unit="PU" value="1.071"/>
+						<qLimit unit="MVAR" min="-6.0" max="24.0"/>
+					</equivGen>
+				</genData>
+				<coeffA>19.327</coeffA>
+				<coeffB>0.01</coeffB>
+				<capacityLimit max="0.7" min="0.1" unit="PU"/>
+				<fixedCost>287.136</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus14" offLine="false" number="14" zoneNumber="1" areaNumber="1" name="Bus 14    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.042"/>
+				<angle unit="DEG" value="-16.13"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="1.6" re="6.2"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus15" offLine="false" number="15" zoneNumber="1" areaNumber="1" name="Bus 15    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.038"/>
+				<angle unit="DEG" value="-16.22"/>
+				<genData>
+					<equivGen code="PQ">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="2.5" re="8.2"/>
+					</equivLoad>
+				</loadData>
+				<coeffA>18.3</coeffA>
+				<coeffB>0.007</coeffB>
+				<capacityLimit max="0.6" min="0.1" unit="PU"/>
+				<fixedCost>230</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus16" offLine="false" number="16" zoneNumber="1" areaNumber="1" name="Bus 16    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.045"/>
+				<angle unit="DEG" value="-15.83"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="1.8" re="3.5"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus17" offLine="false" number="17" zoneNumber="1" areaNumber="1" name="Bus 17    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.04"/>
+				<angle unit="DEG" value="-16.14"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="5.8" re="9.0"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus18" offLine="false" number="18" zoneNumber="1" areaNumber="1" name="Bus 18    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.028"/>
+				<angle unit="DEG" value="-16.82"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="0.9" re="3.2"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus19" offLine="false" number="19" zoneNumber="1" areaNumber="1" name="Bus 19    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.026"/>
+				<angle unit="DEG" value="-17.0"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="3.4" re="9.5"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus20" offLine="false" number="20" zoneNumber="1" areaNumber="1" name="Bus 20    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.03"/>
+				<angle unit="DEG" value="-16.8"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="0.7" re="2.2"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus21" offLine="false" number="21" zoneNumber="1" areaNumber="1" name="Bus 21    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.033"/>
+				<angle unit="DEG" value="-16.42"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="11.2" re="17.5"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus22" offLine="false" number="22" zoneNumber="1" areaNumber="1" name="Bus 22    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.033"/>
+				<angle unit="DEG" value="-16.41"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+			</aclfBus>
+			<aclfBus id="Bus23" offLine="false" number="23" zoneNumber="1" areaNumber="1" name="Bus 23    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.027"/>
+				<angle unit="DEG" value="-16.61"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="1.6" re="3.2"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus24" offLine="false" number="24" zoneNumber="1" areaNumber="1" name="Bus 24    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.021"/>
+				<angle unit="DEG" value="-16.78"/>
+				<genData>
+					<equivGen code="PQ">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="6.7" re="8.7"/>
+					</equivLoad>
+				</loadData>
+				<shuntY unit="PU" im="0.043" re="0.0"/>
+				<coeffA>39.889</coeffA>
+				<coeffB>0.016</coeffB>
+				<capacityLimit max="0.2" min="0.05" unit="PU"/>
+				<fixedCost>128.82</fixedCost>
+			</dclfOpfGenBus>
+			<aclfBus id="Bus25" offLine="false" number="25" zoneNumber="1" areaNumber="1" name="Bus 25    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.017"/>
+				<angle unit="DEG" value="-16.35"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+			</aclfBus>
+			<aclfBus id="Bus26" offLine="false" number="26" zoneNumber="1" areaNumber="1" name="Bus 26    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.0"/>
+				<angle unit="DEG" value="-16.77"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="2.3" re="3.5"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<aclfBus id="Bus27" offLine="false" number="27" zoneNumber="1" areaNumber="1" name="Cloverdle 33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.023"/>
+				<angle unit="DEG" value="-15.82"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+			</aclfBus>
+			<aclfBus id="Bus28" offLine="false" number="28" zoneNumber="1" areaNumber="1" name="Cloverdle132">
+				<baseVoltage unit="KV" value="132.0"/>
+				<voltage unit="PU" value="1.007"/>
+				<angle unit="DEG" value="-11.97"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+			</aclfBus>
+			<aclfBus id="Bus29" offLine="false" number="29" zoneNumber="1" areaNumber="1" name="Bus 29    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="1.003"/>
+				<angle unit="DEG" value="-17.06"/>
+				<genData>
+					<equivGen code="NoneGen">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="0.9" re="2.4"/>
+					</equivLoad>
+				</loadData>
+			</aclfBus>
+			<dclfOpfGenBus id="Bus30" offLine="false" number="30" zoneNumber="1" areaNumber="1" name="Bus 30    33">
+				<baseVoltage unit="KV" value="33.0"/>
+				<voltage unit="PU" value="0.992"/>
+				<angle unit="DEG" value="-17.94"/>
+				<genData>
+					<equivGen code="PQ">
+						<power unit="MVA" im="0.0" re="0.0"/>
+					</equivGen>
+				</genData>
+				<loadData>
+					<equivLoad code="CONST_P">
+						<constPLoad unit="MVA" im="1.9" re="10.6"/>
+					</equivLoad>
+				</loadData>
+				<coeffA>49.327</coeffA>
+				<coeffB>0.024</coeffB>
+				<capacityLimit max="0.2" min="0.1" unit="PU"/>
+				<fixedCost>187.364</fixedCost>
+			</dclfOpfGenBus>
+		</busList>
+		<branchList>
+			<aclfLine circuitId="1" id="Bus1_to_Bus2_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus1"/>
+				<toBus idRef="Bus2"/>
+				<z unit="PU" im="0.0575" re="0.0192"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0528" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus1_to_Bus3_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus1"/>
+				<toBus idRef="Bus3"/>
+				<z unit="PU" im="0.1652" re="0.0452"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0408" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus2_to_Bus4_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus2"/>
+				<toBus idRef="Bus4"/>
+				<z unit="PU" im="0.1737" re="0.057"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0368" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus3_to_Bus4_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus3"/>
+				<toBus idRef="Bus4"/>
+				<z unit="PU" im="0.0379" re="0.0132"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0084" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus2_to_Bus5_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus2"/>
+				<toBus idRef="Bus5"/>
+				<z unit="PU" im="0.1983" re="0.0472"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0418" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus2_to_Bus6_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus2"/>
+				<toBus idRef="Bus6"/>
+				<z unit="PU" im="0.1763" re="0.0581"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0374" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus4_to_Bus6_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus4"/>
+				<toBus idRef="Bus6"/>
+				<z unit="PU" im="0.0414" re="0.0119"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0090" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus5_to_Bus7_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus5"/>
+				<toBus idRef="Bus7"/>
+				<z unit="PU" im="0.116" re="0.046"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0204" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus6_to_Bus7_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus6"/>
+				<toBus idRef="Bus7"/>
+				<z unit="PU" im="0.082" re="0.0267"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.017" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus6_to_Bus8_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus6"/>
+				<toBus idRef="Bus8"/>
+				<z unit="PU" im="0.042" re="0.012"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0090" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfXfr circuitId="1" id="Bus6_to_Bus9_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus6"/>
+				<toBus idRef="Bus9"/>
+				<z unit="PU" im="0.208" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="0.978"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="132.0"/>
+					<toRatedVoltage unit="KV" value="1.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfXfr circuitId="1" id="Bus6_to_Bus10_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus6"/>
+				<toBus idRef="Bus10"/>
+				<z unit="PU" im="0.556" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="0.969"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="132.0"/>
+					<toRatedVoltage unit="KV" value="33.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfXfr circuitId="1" id="Bus9_to_Bus11_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus9"/>
+				<toBus idRef="Bus11"/>
+				<z unit="PU" im="0.208" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="1.0"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="1.0"/>
+					<toRatedVoltage unit="KV" value="11.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfXfr circuitId="1" id="Bus9_to_Bus10_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus9"/>
+				<toBus idRef="Bus10"/>
+				<z unit="PU" im="0.11" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.3" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="1.0"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="1.0"/>
+					<toRatedVoltage unit="KV" value="33.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfXfr circuitId="1" id="Bus4_to_Bus12_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus4"/>
+				<toBus idRef="Bus12"/>
+				<z unit="PU" im="0.256" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.65" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="0.932"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="132.0"/>
+					<toRatedVoltage unit="KV" value="33.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfXfr circuitId="1" id="Bus12_to_Bus13_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus12"/>
+				<toBus idRef="Bus13"/>
+				<z unit="PU" im="0.14" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.65" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="1.0"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="33.0"/>
+					<toRatedVoltage unit="KV" value="11.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfLine circuitId="1" id="Bus12_to_Bus14_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus12"/>
+				<toBus idRef="Bus14"/>
+				<z unit="PU" im="0.2559" re="0.1231"/>
+				<ratingLimit>
+				     <mva rating1="0.32" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus12_to_Bus15_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus12"/>
+				<toBus idRef="Bus15"/>
+				<z unit="PU" im="0.1304" re="0.0662"/>
+				<ratingLimit>
+				     <mva rating1="0.32" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus12_to_Bus16_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus12"/>
+				<toBus idRef="Bus16"/>
+				<z unit="PU" im="0.1987" re="0.0945"/>
+				<ratingLimit>
+				     <mva rating1="0.32" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus14_to_Bus15_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus14"/>
+				<toBus idRef="Bus15"/>
+				<z unit="PU" im="0.1997" re="0.221"/>
+				<ratingLimit>
+				     <mva rating1="0.16" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus16_to_Bus17_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus16"/>
+				<toBus idRef="Bus17"/>
+				<z unit="PU" im="0.1923" re="0.0524"/>
+				<ratingLimit>
+				     <mva rating1="0.16" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus15_to_Bus18_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus15"/>
+				<toBus idRef="Bus18"/>
+				<z unit="PU" im="0.2185" re="0.1073"/>
+				<ratingLimit>
+				     <mva rating1="0.16" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus18_to_Bus19_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus18"/>
+				<toBus idRef="Bus19"/>
+				<z unit="PU" im="0.1292" re="0.0639"/>
+				<ratingLimit>
+				     <mva rating1="0.16" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus19_to_Bus20_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus19"/>
+				<toBus idRef="Bus20"/>
+				<z unit="PU" im="0.068" re="0.034"/>
+				<ratingLimit>
+				     <mva rating1="0.32" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus10_to_Bus20_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus10"/>
+				<toBus idRef="Bus20"/>
+				<z unit="PU" im="0.209" re="0.0936"/>
+				<ratingLimit>
+				     <mva rating1="0.32" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus10_to_Bus17_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus10"/>
+				<toBus idRef="Bus17"/>
+				<z unit="PU" im="0.0845" re="0.0324"/>
+				<ratingLimit>
+				     <mva rating1="0.32" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus10_to_Bus21_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus10"/>
+				<toBus idRef="Bus21"/>
+				<z unit="PU" im="0.0749" re="0.0348"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus10_to_Bus22_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus10"/>
+				<toBus idRef="Bus22"/>
+				<z unit="PU" im="0.1499" re="0.0727"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus21_to_Bus22_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus21"/>
+				<toBus idRef="Bus22"/>
+				<z unit="PU" im="0.0236" re="0.0116"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus15_to_Bus23_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus15"/>
+				<toBus idRef="Bus23"/>
+				<z unit="PU" im="0.202" re="0.1"/>
+				<ratingLimit>
+				     <mva rating1="0.16" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus22_to_Bus24_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus22"/>
+				<toBus idRef="Bus24"/>
+				<z unit="PU" im="0.179" re="0.115"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus23_to_Bus24_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus23"/>
+				<toBus idRef="Bus24"/>
+				<z unit="PU" im="0.27" re="0.132"/>
+				<ratingLimit>
+				     <mva rating1="0.16" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus24_to_Bus25_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus24"/>
+				<toBus idRef="Bus25"/>
+				<z unit="PU" im="0.3292" re="0.1885"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus25_to_Bus26_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus25"/>
+				<toBus idRef="Bus26"/>
+				<z unit="PU" im="0.38" re="0.2544"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus25_to_Bus27_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus25"/>
+				<toBus idRef="Bus27"/>
+				<z unit="PU" im="0.2087" re="0.1093"/>
+				<ratingLimit/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfXfr circuitId="1" id="Bus28_to_Bus27_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus28"/>
+				<toBus idRef="Bus27"/>
+				<z unit="PU" im="0.396" re="0.0"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<fromTurnRatio unit="PU" value="0.968"/>
+				<toTurnRatio unit="PU" value="1.0"/>
+				<xfrInfo>
+					<dataOnSystemBase>true</dataOnSystemBase>
+					<fromRatedVoltage unit="KV" value="132.0"/>
+					<toRatedVoltage unit="KV" value="33.0"/>
+				</xfrInfo>
+			</aclfXfr>
+			<aclfLine circuitId="1" id="Bus27_to_Bus29_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus27"/>
+				<toBus idRef="Bus29"/>
+				<z unit="PU" im="0.4153" re="0.2198"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus27_to_Bus30_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus27"/>
+				<toBus idRef="Bus30"/>
+				<z unit="PU" im="0.6027" re="0.3202"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus29_to_Bus30_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus29"/>
+				<toBus idRef="Bus30"/>
+				<z unit="PU" im="0.4533" re="0.2399"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus8_to_Bus28_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus8"/>
+				<toBus idRef="Bus28"/>
+				<z unit="PU" im="0.2" re="0.0636"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.0428" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+			<aclfLine circuitId="1" id="Bus6_to_Bus28_cirId_1" offLine="false" zoneNumber="1" areaNumber="1">
+				<fromBus idRef="Bus6"/>
+				<toBus idRef="Bus28"/>
+				<z unit="PU" im="0.0599" re="0.0169"/>
+				<ratingLimit>
+				     <mva rating1="0.30" unit="PU"/>
+				</ratingLimit>
+				<totalShuntY unit="PU" im="0.013" re="0.0"/>
+				<lineInfo/>
+			</aclfLine>
+		</branchList>
+		<lossZoneList>
+			<lossZone number="1" name="IEEE 30 BUS"/>
+		</lossZoneList>
+        <opfNetType>SimpleDclf</opfNetType>
+		<anglePenaltyFactor>0.05</anglePenaltyFactor>
+	</dclfOpfNet>
+</pssStudyCase>

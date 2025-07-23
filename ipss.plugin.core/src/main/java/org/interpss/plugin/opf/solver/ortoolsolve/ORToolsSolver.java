@@ -1,6 +1,6 @@
 package org.interpss.plugin.opf.solver.ortoolsolve;
 
-import java.util.List;
+import java.util.List; 
 
 import org.interpss.plugin.opf.common.OPFLogger;
 import org.interpss.plugin.opf.constraint.OpfConstraint;
@@ -12,18 +12,21 @@ import org.interpss.plugin.opf.objectiveFunction.ORToolsObjectiveFunctionCollect
 import org.interpss.plugin.opf.solver.AbstractOpfSolver;
 import org.interpss.plugin.opf.util.OpfDataHelper;
 
-import com.interpss.opf.OpfBus;
-import com.interpss.opf.OpfNetwork;
-import cern.colt.list.DoubleArrayList;
-import cern.colt.list.IntArrayList;
-
 import com.google.ortools.linearsolver.MPConstraint;
 import com.google.ortools.linearsolver.MPObjective;
 import com.google.ortools.linearsolver.MPSolver;
 import com.google.ortools.linearsolver.MPVariable;
+import com.interpss.opf.OpfBus;
+import com.interpss.opf.OpfNetwork;
+
+import cern.colt.list.DoubleArrayList;
+import cern.colt.list.IntArrayList;
 
 public class ORToolsSolver extends AbstractOpfSolver{
 
+    public static void main(String[] args) {
+        System.out.println("Test");
+    }
     // -----------------------------------------------------------------------------------
     // ============================= Class Variables =====================================
     // -----------------------------------------------------------------------------------
