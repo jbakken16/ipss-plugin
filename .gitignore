@@ -1,6 +1,8 @@
 .DS_Store
 .settings
+settings.json
 *.csv
 *.dat
 *.prefs
-/.classpath
+*.classpath
+ipss.test.plugin.core/.classpath
